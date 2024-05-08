@@ -1,0 +1,17 @@
+Crea un file Html dentro una cartella di progetto e completalo 
+con Doctype, Tag Head, Body, Header, Main, Footer.
+
+-> Crea un tag H1 con il tuo nome all'interno
+-> Crea un secondo elemento H2 sotto il precedente e riempilo 
+   con la tua email.
+-> Crea un elemento paragrafo al di sotto dell'h2, e riempilo con  una tua veloce bio.
+-> Crea un secondo paragrafo e completalo con una breve descrizione dei tuoi hobby.
+-> Crea un elemento di tipo main e annida al suo interno solamente i due paragrafi.
+    - Dentro quest'elemento main inserisci un tag img prima dei due paragrafi.
+    - Imposta l'attributo src dell'immagine in modo che punti ad un contenuto reale, e non dimenticare l'attributo alt con una breve descrizione del suo contenuto.
+    - Inserisci la tua immagine dentro un nuovo tag <a>. A questo link cambia l'attributo href con il valore "#", in modo da renderlo inutilizzabile. Una volta fatto questo, passando il cursore sopra l'immagine dovresti visualizzare un puntatore a forma di dito, in quanto l'intera immagine ora dovrebbe essere cliccabile.
+-> Crea un elemento <a> che linki alla tua pagina il tuo profilo GitHub o LinkedIn; il testo del tag <a> dovrebbe essere "GitHub" oppure "LinkedIn".
+-> Crea un elemento “footer” sotto l'elemento main, e inserisci come testo: "Copyright [your name]"
+-> Aggiungi un link interno all’inizio della pagina, usa come attributo href "#footer" e "Scorri giù" come testo. Infine, aggiungi un id con valore "footer" all'elemento footer; in questo modo, cliccando il link la pagina scorrerà (se necessario) per raggiungerlo immediatamente.
+
+
