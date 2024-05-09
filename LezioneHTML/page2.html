@@ -66,26 +66,44 @@
     </div>
     <div>
         <h2>Form</h2>
-        <form>
+        <form action="gestione.php" method="POST">
             <fieldset>
                 <legend>Register</legend>
                 <!-- Campi del form -->
                 <!-- text - number - email - password - tel -->
-                <!-- data - file - checkbox - radio -->
+                <!-- data - file - checkbox - radio - select - textarea -->
+                <!-- Proprietà dei campi input di un form -->
+                <!-- for - id - name - placeholder - type -->
+                <!-- required - autofocus - checked - disabled  -->
+                <!-- maxlength - min - max - value - readonly -->
                 <table>
                     <tr>
                         <td><label for="username">Nome Utente: </label></td>
                         <td><input type="text" 
                             id="username" 
                             name="username" 
-                            placeholder="Inserisci il tuo username" /></td>
+                            placeholder="Inserisci il tuo username"
+                            autofocus /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="age">Età: </label></td>
+                        <td><input type="number"
+                                    id="age"
+                                    name="age"
+                                    min="3"
+                                    max="10"
+                                    placeholder="Inserisci la tua età"
+                                    disabled></td>
                     </tr>
                     <tr>
                         <td><label for="email-address">Email: </label></td>
                         <td><input type="email" 
                             id="email-address"
                             name="email"
-                            placeholder="Inserisci la tua email" /></td>
+                            placeholder="Inserisci la tua email"
+                            value="example@example.com"
+                            readonly 
+                            required /></td>
                     </tr>
                     <tr>
                         <td><label for="phone">Telefono: </label></td>
@@ -95,6 +113,40 @@
                                     placeholder="Inserisci il tuo numero di telefono"/></td>
                     </tr>
                     <tr>
+                        <td><label for="data">Data di nascita: </label></td>
+                        <td><input type="date"
+                                    id="data"
+                                    name="data"
+                                    placeholder="Inserisci la tua data di nascita"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cv">Inserisci CV</label></td>
+                        <td><input type="file"
+                                    id="cv"
+                                    name="cv"
+                                    placeholder="Inserisci il tuo CV"></td>
+                    </tr>
+                    <tr>
+                        <td>Linguaggi preferiti: </td>
+                        <td>
+                            <label for="html">html</label> 
+                                <input type="checkbox" id="html" name="html" checked />
+                            <label for="javascript">javascript</label> 
+                                <input type="checkbox" id="javascript" name="javascript" />
+                            <label for="python">python</label> 
+                                <input type="checkbox" id="python" name="python" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sesso: </td>
+                        <td>
+                            <label for="uomo">Uomo</label> 
+                                <input type="radio" id="uomo" name="sesso" value="M" />
+                            <label for="donna">Donna</label> 
+                                <input type="radio" id="donna" name="sesso" value="F" />
+                        </td>
+                    </tr>
+                    <tr>
                         <td><label for="password">Password: </label></td>
                         <td><input type="password" 
                             id="password"
@@ -102,23 +154,48 @@
                             placeholder="Inserire password"/></td>
                     </tr>
                     <tr>
+                        <td><label for="so">Sistema Operativo</label></td>
                         <td>
-                            <button type="submit">Registrati</button>
-                            <button type="reset">Cancella</button>
+                            <select id="so" name="sistema-operativo">
+                                <option>Scegli il tuo Sistema Operativo</option>
+                                <option>Windows</option>
+                                <option>MacOS</option>
+                                <option>Linux</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="commento">Commento: </label></td>
+                        <td>
+                            <textarea id="commento" name="commento" rows="5" cols="40" maxlength="10">
+                            </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" >Registrati</button>
+                            <button type="reset" disabled>Cancella</button>
                         </td>
                         <td>
                             <!-- Metodo alternativo -->
-                            <input type="submit" value="Registrati">
+                            <!-- <input type="submit" value="Registrati"> -->
                         </td>
                     </tr>
                 </table>
-
-                
                 
                 
             </fieldset>
         </form>
     
+    </div>
+    <div>
+        <h2>Iframe</h2>
+        <iframe src="https://www.w3schools.com" 
+                title="W3Schools Free Online Web Tutorials">
+        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2969.4634424123037!2d12.443634176371917!3d41.904395071238845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1715252234131!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/j48RS48XU1s?si=BywpRtQeZ5jQNS9Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
 
