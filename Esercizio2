@@ -1,0 +1,85 @@
+L'esercizio prevede la creazione di un layout in HTML per una pagina adatta a contenere i post di un blog.
+Andranno creati i tag semantici di struttura ed andrà impaginato il contenuto testuale seguente, utilizzando l’immagine del logo nella cartella «assets».
+
+Titolo pagina: Sviluppo di una pagina web - Blog
+Descrizione pagina: Primi passi operativi per creare un modello di pagina HTML per un post. Scopri come iniziare in modo facile.
+
+Contenuti pagina:
+
+Logo (nella cartella assets/img/)
+(https://it.wikipedia.org/wiki/W3Schools#/media/File:W3Schools_logo.svg)
+Il blog dei developers
+
+(inizio menù)
+Home
+Articoli
+Lavora con noi
+(fine menù)
+
+(titolo post)
+Come creare un template per i post
+di Mario Rossi - pubblicato il 25-10-2020
+
+(contenuto del post)
+La prima cosa da fare è suddividere in blocchi logici la pagina, identificando le parti comuni da applicare a tutte le pagine
+
+Le varie aree saranno quindi suddivise in:
+Contenuti di intestazione del tag <header>
+Contenuti centrali variabili del tag <main> (corpo principale)
+Contenuti di fine pagina comuni, da inserire nel tag <footer>
+
+Formattazione del codice
+
+Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da selezionare con i CSS. Perciò i passi saranno:
+Progettare il markup assegnando ad ogni specifico testo il tag appropriato
+Scrivere l'HTML dai tag esterni a quelli interni e dall'alto verso il basso
+Applicare gli stili CSS
+
+L'applicazione di stili CSS è cresciuta negli anni fino a raggiungere la diffusione pressoché totale.
+
+(tabella a 3 colonne)
+Diffusione dei CSS
+Anno    	% di utilizzo    Supporto browsers
+2000    	20%    	         17%
+2002    	35%    	         22%
+2004    	45%    	         42%
+2008    	80%    	         51%
+2012    	100%    	     76%
+
+Un test di validazione potrà essere fatto tramite il tool online -LINK ESTERNO- dedicato allo scopo. Una volta ottimizzato il tutto, avremo raggiunto il nostro obiettivo ed essere stati dei veri developers come loro:
+- INSERIRE VIDEO YOUTUBE -
+(fine contenuto post)
+
+Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:
+(form newsletter)
+inserisci l'email (campo input)
+Iscriviti! (pulsante invio)
+(fine form newsletter)
+
+(area correlati)
+Articoli correlati
+Validare il codice HTML
+Categoria: develop
+Data: 18-9-2020
+
+Correggere la sintassi
+Categoria: develop
+Data: 16-9-2020
+
+Meno Kb nella pagina
+Categoria: ottimizzazione
+Data: 30-9-2020
+(fine area correlati)
+
+(copyright e info)
+My Blog ©2024
+
+Testata online di Mario Rossi, registrata con prot. n.213/2018 - via emo 16 - Roma. P.IVA 00112233. 
+
+info@example.com -LINK EMAIL-
+(fine copyright e info)
+
+
+
+
+
