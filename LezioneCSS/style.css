@@ -1,0 +1,88 @@
+/* questo è un commento */
+/*
+    Commento 
+    multi linea
+*/
+
+/* SELETTORI */
+
+/* Selettore universale */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Selettore di base o di tag */
+h1, h2 {
+    color: brown;
+    font-style: italic;
+}
+
+/* h2 {
+    color: brown;
+    font-style: italic;
+} */
+
+/* Selettore di Classe */
+.pippo {
+    color: cornflowerblue;
+    font-size: 20px;
+}
+
+/* Selettore di Id */
+#primo {
+    text-decoration: underline;
+}
+
+/* Selettore di discendenti */
+main p {
+    font-weight: bold;
+}
+
+/* Selettore di figli */
+main > p {
+    font-style: oblique;
+}
+
+/* Selettore di fratelli adiacenti */
+h1 + h2 {
+    color: blueviolet;
+}
+
+/* Selettore di fratelli */
+h1 ~ h2 {
+    text-decoration: line-through;
+}
+
+/* Selettore in base ad un attributo */
+input[name] {
+    border: 1px solid red;
+}
+/* Selettore in base ad un attributo con un valore esatto */
+input[type="text"] {
+    width: 80px;
+}
+/* Selettore in base ad un attributo che contiene uno specifico valore */
+input[placeholder~="Full"] {
+    border-radius: 15%;
+}
+
+/* Selettore in base ad un attributo che inizia con uno specifico valore */
+input[name^="pas"] {
+    color: darkseagreen;
+}
+
+/* Selettore in base ad un attributo che termina con uno specifico valore */
+input[placeholder*="e..."] {
+    background-color: chartreuse;
+}
+
+/* Pseudo Elementi */
+a:hover {
+    color: darkgoldenrod;
+}
+
+input[type="email"]:focus {
+    border: 5px solid green;
+}
+
+/* Pseudo Classi */
