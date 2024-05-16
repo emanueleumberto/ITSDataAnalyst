@@ -1,0 +1,96 @@
+body {
+    background-color: antiquewhite;
+}
+
+main {
+    background-color: white;
+    text-align: justify;
+    
+    /* Area del contenuto width | height */
+    width: 600px;
+    /* height: 300px; */
+    
+    /* Padding | Spazio tra bordo e contenuto */
+    /* padding-left: 15px;
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-bottom: 20px; */
+
+    /* Forma contratta | TOP - RIGHT - BOTTOM - LEFT */
+    /* padding: 20px 15px 20px 15px; */
+
+    /* Forma contratta | TOP/BOTTOM (asse Y) - RIGHT/LEFT (asse X) */
+    /* padding: 20px 15px; */
+
+    /* Forma contratta | TOP/BOTTOM/RIGHT/LEFT */
+    padding: 15px;
+
+    /* Border | Bordo del contenitore */
+    /* border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: brown;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: brown;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: brown;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: brown; */
+
+    /* Forma contratta | TOP - RIGHT - BOTTOM - LEFT */
+    /* border-width: 1px 2px 3px 4px;
+    border-style: solid dotted double outset;
+    border-color: brown blue yellowgreen cyan; */
+
+    /* Forma contratta | TOP - RIGHT - BOTTOM - LEFT */
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: brown; */
+
+    /* Forma contratta */
+    border: 1px solid brown;
+
+    /* Margin | Spazio tra il contenitore e l'elemento vicino */
+    /* margin: 15px 15px 15px 15px; */
+
+    /* Forma contratta */
+    /* margin: 100px; */
+
+    /* Margin auto */
+    margin: 0 auto;
+}
+
+/* Section */
+
+section {
+    width: 900px;
+    background-color: white;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+section div:not(div.reset) {
+    width: 300px;
+    float: left;
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+section .box1 {
+    background-color: lightgrey;
+}
+
+section .box2 {
+    background-color: lightblue;
+}
+
+section .box3 {
+    background-color: lightgreen;
+}
+
+.reset {
+    clear: both;
+}

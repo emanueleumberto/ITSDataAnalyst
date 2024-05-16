@@ -76,7 +76,7 @@ input[placeholder*="e..."] {
     background-color: chartreuse;
 }
 
-/* Pseudo Elementi */
+/* Pseudo Classi */
 a:hover {
     color: darkgoldenrod;
 }
@@ -85,4 +85,42 @@ input[type="email"]:focus {
     border: 5px solid green;
 }
 
-/* Pseudo Classi */
+aside div:first-child {
+    border: 1px solid red;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: burlywood;
+}
+
+aside div:last-child {
+    border: 1px solid rgb(255, 0, 204);
+}
+
+aside div:not(div:first-child) {
+    color: rgb(0, 255, 242);
+}
+
+/* 2n+1 | odd | even */
+aside div:nth-child(even) {
+    background-color: darkgray;
+}
+
+/* Pseudo Elementi */
+
+aside div p::first-letter {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: brown;
+}
+
+aside div h1::before {
+    content: " ( ";
+    color: chartreuse;
+}
+
+aside div h1::after {
+    content: " ) ";
+    color: chartreuse;
+}

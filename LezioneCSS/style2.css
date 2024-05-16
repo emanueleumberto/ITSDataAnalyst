@@ -1,0 +1,71 @@
+/* Assolute: px | pt */
+/* Relative: % | em | rem */
+/* Valore di default del testo del browser: 16px */
+    
+    /* 
+        REM valore relativo riferito ad un elemento radice (root). 
+        font-size: 1rem; -> 16px 
+        font-size: 0.8rem; -> 12.8px 
+        font-size: 0.5rem; -> 8px 
+    */
+
+    /* 
+        % valore relativo in proporzione dell'elemento parent. 
+        font-size: 100%; -> 16px
+        font-size: 80%; -> 12.8px
+        font-size: 50%; -> 8px 
+    */
+    
+    /* 
+        EM valore relativo in proporzione dell'elemento parent.
+        font-size: 1em; -> 16px
+        font-size: 0.8em; -> 12.8px
+        font-size: 0.5em; -> 8px 
+    */
+
+/* 
+    Font-size di default: 16px
+    1.2rem -> 24px
+    1.2em -> 28.8px
+    120% -> 28.8px
+*/
+
+body {
+    font-size: 1.5rem; /* 24px */
+}
+
+main {
+    font-size: 1.1em /* 26.4px */
+}
+div {
+    font-size: 1.1em /* 29.04px */
+}
+
+div h1 {
+    font-size: 1.2em; /* 34,85px */
+}
+
+div p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.8em;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-shadow: 2px -3px 5px #666;
+    color: #d37618;
+}
+
+div h1 {
+    font-family: 'Shantell Sans';
+    text-transform: capitalize;
+    text-align: center;
+    color: #e24d03;
+}
+
+div svg {
+    width: 1rem;
+}
