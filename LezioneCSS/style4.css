@@ -1,0 +1,103 @@
+/* Background */
+/*
+    background-color -> #FFFFFF | rgb(255, 255, 255)
+    background-image -> url('...')
+    background-repeat -> no-repeat | repeat | repeat-x | repeat-y
+    background-size -> 1em | 100% | cover
+    background-position -> top | left | bottom | right | center
+    background-attachment -> fixed | scroll
+
+    background: color image position size repeat attachment
+*/
+
+/* Display */
+/*
+    display -> block | inline | inline-block | none
+*/
+
+
+body {
+    background-color: lightskyblue;
+    /* background-image: url(assets/img/square-pattern.png); */
+    /* background-image: url(assets/img/lays.png); */
+    background-image: url(assets/img/spot-inspection.jpg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-attachment: fixed;
+    background-size: 25em;
+}
+
+.image img {
+    width: 100%;
+}
+
+.image2 {
+    min-height: 250px;
+    background-image: url(assets/img/header-banner.png);
+    background-size: cover;
+}
+
+.container {
+    width: 900px;
+    /* height: 200px; */
+    min-height: 250px;
+    background-color: white;
+    margin: 0 auto;
+    
+}
+
+.container div {
+    width: 500px;
+    margin: 10px auto;
+    border: 3px solid red;
+    /* outline: 3px solid blue;
+    outline-offset: 10px; */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.gradient {
+    width: 100%;
+    min-height: 250px;
+    background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,255,1) 32%, rgba(255,244,80,1) 63%, rgba(50,126,255,1) 100%);
+    
+}
+
+.gradient:hover {
+    width: 515px;
+    box-shadow: -4px -4px 8px 2px rgb(116, 116, 116);
+}
+
+.display div {
+    width: 100px; 
+    display: inline;
+}
+
+.display span {
+    display: block;
+}
+
+nav {
+    background-color: brown;
+}
+
+nav li {
+    display: inline-block;
+    padding: 15px 10px;
+}
+
+nav ul li:last-child {
+    /* display: none; */
+    /* visibility: hidden; */
+    opacity: 0;
+}
+
+#test {
+    /* display: none; */
+    /* visibility: hidden; */
+    opacity: 0;
+}
+
+nav li a {
+    text-decoration: none;
+}
