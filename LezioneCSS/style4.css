@@ -17,13 +17,13 @@
 
 
 body {
-    background-color: lightskyblue;
-    /* background-image: url(assets/img/square-pattern.png); */
+    background-color: rgb(135, 250, 152);
+    background-image: url(assets/img/square-pattern.png);
     /* background-image: url(assets/img/lays.png); */
-    background-image: url(assets/img/spot-inspection.jpg);
-    background-repeat: no-repeat;
-    background-position: center right;
-    background-attachment: fixed;
+    /* background-image: url(assets/img/spot-inspection.jpg); */
+    background-repeat: repeat;
+    /* background-position: center right;
+    background-attachment: fixed; */
     background-size: 25em;
 }
 
