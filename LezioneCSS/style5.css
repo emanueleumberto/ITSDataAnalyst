@@ -1,0 +1,38 @@
+.container {
+    width: 900px;
+    margin: 10px auto;
+    border: 1px solid black;
+}
+
+.container div {
+    width: 300px;
+    border: 1px solid red;
+    padding: 10px;
+    text-align: justify;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.container div img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+main {
+    clear: both;
+    width: 900px;
+    margin: 10px auto;
+    border: 1px solid green;
+}
+
+.top img {
+    width: 100px;
+}
+
+.top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}

@@ -1,0 +1,44 @@
+.container {
+    width: 900px;
+    height: 600px;
+    margin: 10px auto;
+    border: 1px solid black;
+    /* Flex box */
+    /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    display: flex;
+    flex-direction: row; /* row | row-reverse | column | column-reverse */
+    flex-wrap: wrap;   /* nowrap | wrap | wrap-reverse */
+    justify-content: space-evenly; /* flex-start | flex-end | center | space-between | space-around | space-evenly  */
+    align-content: space-evenly; /* stretch | flex-start | flex-end | center | space-between | space-around | space-evenly  */
+    gap: 10px; /* gap |row-gap | column gap */
+
+}
+
+.container div {
+    width: 240px;
+    border: 1px solid red;
+    padding: 10px;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+.container div img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+#box-1 {
+    /* flex-grow: 1; */
+    flex-basis: 25%;
+}
+
+#box-2 {
+    /* flex-grow: 2; */
+    flex-basis: 45%;
+}
+
+#box-3 {
+    /* flex-grow: 1; */
+    flex-basis: 25%;
+}

@@ -1,0 +1,19 @@
+.container {
+    border: 1px solid black;
+}
+
+.container-md {
+    border: 1px solid red;
+}
+
+.container-lg {
+    border: 1px solid green;
+}
+
+.container-fluid {
+    border: 1px solid orange;
+}
+
+.col, .col-6, .col-4 {
+    border: 1px solid black;
+}
