@@ -131,3 +131,7 @@ while (arrUser.length < 3) {
 }
 
 console.log(arrUser);
+
+
+// Esercizi per casa
+// https://codegrind.it/esercizi/javascript
