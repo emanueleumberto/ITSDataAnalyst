@@ -1,3 +1,7 @@
 body {
     background-color: lightgreen;
 }
+
+.abc {
+    border: 1px solid red;
+}

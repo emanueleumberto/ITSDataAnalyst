@@ -306,7 +306,7 @@ while(true) {
 arrayProdotti.forEach(p => {
     totalCount = totalCount + p.quantita
     totalPrice = totalPrice + (p.prezzo * p.quantita);
-    console.log(p.nome + ' categoria: ' + p.categoria)
+    console.log(p)
 })
 
 console.log('******************************');
