@@ -60,13 +60,13 @@ console.log(coll); */
 // document.querySelectorAll(SELECTOR) -> NodeList
 
 
-let div = document.createElement('div');
+/* let div = document.createElement('div');
 div.className = 'abc';
 div.innerHTML = '<p>Sono un nuovo paragrafo</p>';
 console.log(div);
 
 let body = document.querySelector('body');
-body.appendChild(div);
+body.appendChild(div); */
 
 // Esercizio difficile
 // Partendo da una pagina HTML vuota con solo un nodo 
@@ -80,3 +80,31 @@ body.appendChild(div);
 // tutti gli oggetti (minimo 3) creati nell'array
 // Alla fine della lista creare un paragrafo con in totale 
 // degli oggi contentui nell'array
+
+let obj1 = {name: 'Mario', lastname: 'Rossi', city: 'Roma'};
+let obj2 = {name: 'Giuseppe', lastname: 'Verdi', city: 'Milano'};
+let obj3 = {name: 'Francesca', lastname: 'Neri', city: 'Napoli'};
+let obj4 = {name: 'Antonio', lastname: 'Bianchi', city: 'Torino'};
+let arr = [obj1, obj2, obj3, obj4];
+
+let div = document.querySelector('div.container')
+
+let h1 = document.createElement('h1');
+h1.innerText = 'Lista Utenti';
+
+let p = document.createElement('p');
+p.innerText = 'Lista utenti generata dinamicamente con Javascript';
+
+let ul = document.createElement('ul');
+arr.forEach(ele => {
+    /* console.log(ele); */
+    let li = document.createElement('li');
+    li.innerHTML =    ele.name + ' ' 
+                    + ele.lastname + '<strong> (' 
+                    + ele.city + ')</strong>';
+    ul.appendChild(li);
+})
+
+div.appendChild(h1);
+div.appendChild(p);
+div.appendChild(ul);
