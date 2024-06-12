@@ -1,3 +1,30 @@
+/* https://www.omdbapi.com/?apikey=a17a78ae&
+apikey=a17a78ae
+s=batman
+page=1
+type=movie
+y=1999 */
+
+
+
+fetch('https://www.omdbapi.com/?s=batman&page=1&type=movie&apikey=a17a78ae')
+        .then(response => response.json())
+        .then(json => printJson(json.Search))
+
+
+function printJson(arr) {
+    let div = document.querySelector('div.omdb');
+    arr.forEach(ele => {
+        let img = document.createElement('img');
+        img.src = ele.Poster;
+        img.style.width = '250px';
+        img.style.margin = '10px';
+        div.appendChild(img);
+    })
+}
+
+
+
 // Ogg capace di effettuare richieste ad un server
 let xhr = new XMLHttpRequest();
 // Metodo Open mi permette di definire il tipo di richiesta
@@ -149,3 +176,9 @@ fetch('https://jsonplaceholder.typicode.com/users/2', {method: 'DELETE'})
     .then(repsonse => repsonse.json())
     .then(json => console.log(json))
     .catch(error => console.error(error))
+
+
+
+
+
+
