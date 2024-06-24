@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS istituti (
     CONSTRAINT istituti_pk PRIMARY KEY(codice)
 );
 
--- Tab Classi
+-- Tab Classi -> codice, nome, nalunni, codice_istituto
 CREATE TABLE IF NOT EXISTS classi (
 	codice INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(10) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS classi (
         ON UPDATE CASCADE
 );
 
--- Tab Studenti
+-- Tab Studenti -> nome, cognome, data_nascita, indirizzo, cap, comune, provincia, sesso, codice_classe
 CREATE TABLE IF NOT EXISTS studenti (
 	nome VARCHAR(25) NOT NULL,
     cognome VARCHAR(25) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS studenti (
         ON UPDATE CASCADE
 );
 
--- Tab Docenti
+-- Tab Docenti -> codice, nome, cognome, data_nascita, indirizzo, cap, comune, provincia, sesso
 CREATE TABLE IF NOT EXISTS docenti (
 	codice INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR(25) NOT NULL,
@@ -77,4 +77,29 @@ CREATE TABLE IF NOT EXISTS insegnare (
 INSERT INTO istituti (codice, nome, indirizzo)
 		VALUES ('I001', 'ITS_Agnesi', 'Via Emo 13');
         
+-- Tab Classi -> codice, nome, nalunni, codice_istituto
+INSERT INTO classi (nome, codice_istituto)
+		VALUES  ('Aula 1', 'I001'),
+				('Aula 2', 'I001'),
+                ('Aula 3', 'I001');
+
+-- Tab Studenti -> nome, cognome, data_nascita, indirizzo, cap, comune, provincia, sesso, codice_classe
+INSERT INTO studenti (nome, cognome, data_nascita, indirizzo, cap, comune, provincia, sesso, codice_classe)
+		VALUES  ('Mario', 'Rossi', '2004-02-05', 'Via abc 23', '00100', 'Roma', 'RM', 'M', 1),
+				('Pippo', 'Papo', '2001-08-17', 'Via aduifkjh 23', '01631', 'Napoli', 'NA', 'M', 2),
+                ('Francesca', 'Neri', '2000-05-21', 'Via aduifkjh 23', '01631', 'Napoli', 'NA', 'F', 1);
+
+-- Tab Docenti -> codice, nome, cognome, data_nascita, indirizzo, cap, comune, provincia, sesso
+INSERT INTO docenti (nome, cognome, data_nascita, indirizzo, cap, comune, provincia, sesso)
+		VALUES  ('Giuseppe', 'Verdi', '1986-02-05', 'Via Emo 23', '00100', 'Roma', 'RM', 'M');
+                
 SELECT * FROM istituti;
+SELECT * FROM classi;
+SELECT * FROM studenti;
+SELECT * FROM docenti;
+
+
+
+
+
+

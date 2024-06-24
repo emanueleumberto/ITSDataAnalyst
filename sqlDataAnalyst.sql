@@ -69,6 +69,86 @@
 		-- Salvo le modifiche nel DB
 */ 
 
+-- DQL
+-- SELECT -> Un elenco di campi o tutto(*) da eporre nel resulset di risultati
+-- FROM -> indica la sorgente dati (la/le tabelle)
+-- WHERE -> search condition, applica un filtro sulle righe 
+--          della tabella indicata nel FROM
+-- GROUP BY -> aggregazione di dati rispetto alla combinazione univoca 
+-- 			   data dalla group by list
+-- HAVING -> search condition, applica un filtro sulle righe della tabella 
+-- 			 filtrata e aggregata dal GROUP BY
+-- ORDER BY -> consente di definire un ordinamento ben preciso
+-- LIMIT -> consente di selezionare un numero definito di record
+
+/*
+SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN | * | aggregate_function(expression)
+	FROM table_name
+    [WHERE search condition]
+    [GROUP BY]
+    [HAVING]
+    [ORDER BY]
+    [LIMIT n]
+
+SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN | * | aggregate_function(expression)
+	FROM table_name
+    INNER | LEFT | RIGHT JOIN table_name2 ON condition
+    INNER | LEFT | RIGHT JOIN table_name3 ON condition
+    ....
+    INNER | LEFT | RIGHT JOIN table_nameN ON condition
+    [WHERE search condition]
+    [GROUP BY]
+    [HAVING]
+    [ORDER BY]
+    [LIMIT n]
+*/
+
+/*
+	Operatori di confronto della search condition
+    = (uguale)
+    > (maggiore di)
+    < (minore di)
+    >= (maggiore uguale)
+    <= (minore uguale)
+    <> | != (diverso da)
+    !< (Non minore di)
+    !> (Non maggiore di)
+*/
+
+/*
+	Operatori Logici
+    AND (restituisce TRUE solo se entrambe le condizioni booleane restituiscono TRUE)
+    OR (restituisce TRUE se almeno una delle condizioni booleane restituisce TRUE)
+    () precedenze
+    
+    LIKE (contiene ... | caratteri jolly %_)
+    BETWEEN (restituisce tutti i valori compresi tra >= AND <= del range specificato)
+    IN | NOT IN (Elenco di espressione in cui individuare una corrispondenza)
+    
+    WHERE nome = 'Mario'
+    WHERE nome LIKE 'M%'
+    WHERE nome LIKE 'M_ri_'
+*/
+
+/*
+	Functions
+    String Functions
+    Numeric Functions
+    Date Functions
+    Advanced Functions
+*/
+
+/*
+	SubQuery
+    Inner Query
+*/
+
+/*
+	View
+    Store Procedure
+    Custom Function
+*/
+
 DROP DATABASE IF EXISTS test_da;
 CREATE DATABASE IF NOT EXISTS test_da;
 -- SHOW DATABASES;
