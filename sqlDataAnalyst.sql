@@ -133,14 +133,67 @@ SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN | * | aggregate_
 /*
 	Functions
     String Functions
+    https://dev.mysql.com/doc/refman/8.4/en/string-functions.html
+    CONCAT(column_name1, ' ', column_name2) -> Funzione che mi permette di unire 2 o più campi
+    UPPER('string' | column_name) -> Funzione che restituisce il valore del campo in maiuscolo
+    LOWER('string' | column_name) -> Funzione che restituisce il valore del campo in minuscolo
+    LENGTH('string' | column_name) -> Funzione che restituisce la lunghezza di una stringa o di un campo
+    TRIM('string' | column_name) ->  Funzione che restituisce senza spazi bianchi prima e dopo il valore inserito
+    
     Numeric Functions
+    https://dev.mysql.com/doc/refman/8.4/en/numeric-functions.html
+    COUNT(* | DISTINCT column_name) -> Funzione che restituisce il numero di record di una query
+    FORMAT(number | column_name, 2) -> Funzione che restituisce un numero decimale formattato
+    TRUNCATE((number | column_name, 2) -> Funzione che restituisce un numero decimale troncato
+    ABS(number | column_name) -> Funzione che restituisce un valore assoluto, senza segno
+    AVG(column_name) -> Funzione che restituisce la media dei valori di una colonna
+    CEIL(column_name) -> Funzione che restituisce un valore arrotondato per eccesso
+    FLOOR(column_name) -> Funzione che restituisce un valore arrotondato per difetto
+    ROUND(column_name) -> Funzione che restituisce un valore arrotondato al numero intero più vicino
+    RAND() -> Funzione che restituisce un numero casuale tra 0 e 1
+    MAX(column_name) -> Funzione che restituisce il valore massimo 
+    MIN(column_name) -> Funzione che restituisce il valore minimo
+    SUM(column_name) -> Funzione che restituisce la somma dei valori
+    
     Date Functions
+    https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html
+    ADDDATE(date, n) -> Funzione che aggiunge n ad una data
+    ADDTIME(datetime, n) -> Funzione che aggiunge n ad un valore orario
+    CURRENT_DATE() -> Funzione che restituisce una data in formato 'YYYY-MM-DD'(String)
+    CURRENT_TIME() -> Funzione che restituisce un orario in formato 'HH-MM-SS'(String)
+    CURRENT_TIMESTAMP() -> Funzione che restituisce data e ora del momento
+    DATEDIFF(date1, date2) -> Funzione che calcola la differenza di giorni tra due date
+    DAY(date) -> Funzione che restituisce il giorno da una data
+    MONTH(date) -> Funzione che restituisce il mese  da una data
+    YEAR(date) -> Funzione che restituisce l'anno da una data
+    HOUR(datetime) -> Funzione che restituisce l'ora da una data
+    MINUTE(datetime) -> Funzione che restituisce i minuti da una data
+    SECOND(datetime) -> Funzione che restituisce i secondi da una data
+    
     Advanced Functions
+    ISNULL(column_name) -> Funzione che restituisce 1 o 0 in base al valore NULL di una colonna
+    LAST_INSERT_ID() -> Funzione che restituisce l'ultimo valore intero del campo ID della PK
 */
 
 /*
-	SubQuery
-    Inner Query
+	SubQuery o Inner Query -> Sono query inserite in altre query, 
+    una query annidata dipende dalla query esterna
+    
+    SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN | * | aggregate_function(expression)
+	FROM (
+		SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN ) 
+			FROM table_name
+            [WHERE search condition]
+	)
+    [WHERE search condition]
+    
+    SELECT (
+		SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN ) 
+			FROM table_name
+            [WHERE search condition]
+	)
+	FROM table_name
+    [WHERE search condition]
 */
 
 /*

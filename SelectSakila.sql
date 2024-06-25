@@ -86,4 +86,31 @@ SELECT a.address, a.district, c.city, co.country
     INNER JOIN country AS co ON c.country_id = co.country_id
     WHERE co.country = 'Brazil';
     
+/*
+
+SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN | * | aggregate_function(expression)
+	FROM (
+		SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN ) 
+			FROM table_name
+            [WHERE search condition]
+	)
+    [WHERE search condition]
+
+*/
+
+
     
+SELECT * FROM city AS ci 
+	INNER JOIN (
+		SELECT country_id, country FROM country 
+		WHERE country IN ('Afghanistan', 'Bangladesh', 'China')
+    ) AS co ON ci.country_id = co.country_id ;
+    
+SELECT * FROM city WHERE country_id IN (
+	SELECT country_id FROM country 
+		WHERE country IN ('Afghanistan', 'Bangladesh', 'China')
+);
+
+SELECT COUNT(*) AS TOT_city, (
+	SELECT COUNT(*) FROM country 
+) AS TOT_country FROM city;
