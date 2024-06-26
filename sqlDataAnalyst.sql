@@ -198,8 +198,42 @@ SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN | * | aggregate_
 
 /*
 	View
+    CREATE [ON REPLACE] VIEW view_name AS
+		SELECT [DISTINCT] column_name1, column_name2, ..., column_nameN | * | aggregate_function(expression)
+		FROM table_name
+		[WHERE search condition]
+		[GROUP BY]
+		[HAVING]
+		[ORDER BY]
+		[LIMIT n]
+    
     Store Procedure
+    
+    DELIMITER &&
+    CREATE PROCEDURE procedure_name [
+				[IN | OUT | INOUT] parameter_name data_type[, parameter_name data_type]]
+	BEGIN
+		Declaration_section
+    END &&
+    DELIMITER;
+    
+    CALL procedure_name (parameter/s)
+    DROP PROCEDURE [IF EXISTS] procedure_name
+    
     Custom Function
+    
+    DELIMITER &&
+    CREATE FUNCTION function_name(parameter_name data_type[, parameter_name data_type])
+    [RETURNS data_type]
+    [NOT] DETERMINISTIC
+    BEGIN
+		Declaration_section
+    END &&
+    DELIMITER;
+    
+    SELECT function_name(parameter, ...)
+    
+    DROP FUNCTION [IF EXISTS] function_name
 */
 
 DROP DATABASE IF EXISTS test_da;
