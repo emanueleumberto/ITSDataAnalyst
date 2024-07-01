@@ -1,3 +1,5 @@
+# Lezione 1
+
 # Python non è un linguaggio fortemente tipizzato;
 # Variabili -> Contenitore di dati
 a = 5; # Dichiarazione ed inizializzazione di una variabile
@@ -163,3 +165,147 @@ for n in range(0,10):
         break
 else:
     print('FINE')
+    
+# Lezione 2
+
+# Collection
+# List | Tuple | Set | Dictionary
+# - List: Collezioni di dati ORDINATE, MODIFICABILI e permettono duplicati.
+# -> v = ['Roma', 'Milano', 'Napoli']
+# - Tuple: Collezioni di dati ORDINATE, IMMUTABILI e permettono duplicati.
+# -> v = ('Roma', 'Milano', 'Napoli')
+# - Set: Collezioni di dati NON ORDINATE e per questo non indicizzabili, 
+#        non modificabili e non permettono duplicati
+# -> v = {'Roma', 'Milano', 'Napoli'}
+# - Dictonary: Collezioni di dati ORDINATE e modificabili ma non permettono duplicati
+# -> v = {"nome": "Mario", "cognome": "Rossi", "citta": "Roma"}
+
+
+# List
+# Collezioni di dati ORDINATE, MODIFICABILI e permettono duplicati.
+# è possibile creare liste, tuple, set con valori dello stesso tipo e di tipo diverso
+# list() | type() | len() | count(val)
+# Accedere ad elementi di una lista tramite un indice
+# l[i] | l[i:i] | l[:i] | l[i:] | l[-i:-i]
+# Modificare elementi di una lista tramite un indice
+# l[i] = 'nuovo valore' | l[0: i] = ['val1', '...', 'valN']
+# Aggiungere elementi ad una lista tramite append('val) | insert(index, 'val')
+# Rimuovere elementi da una lista 
+# remove(val) | pop() | pop(index) | del l[index] | del l | clear()
+# Unire due o piu liste con estend(newList)
+# Ordinare una lista sort() | sort(reverse=True)
+# Copiare una lista nl = l.copy() | nl = list(l)
+# Iterare Liste con ForIn | While
+# for ele in list:
+#    istruzioni
+
+l = ['Roma', 'Milano', 'Napoli'] # lista vuota
+print(type(l))
+l = list(('Roma', 'Milano', 'Napoli', 'Roma')) # lista vuota
+print(type(l))
+print(len(l))
+print(l.count('Roma'))
+print(l[1])
+print(l[1:3])
+print(l[:2])
+print(l[2:])
+print(l[-3: -1])
+
+l[1] = 'Palermo'
+print(l)
+l[1:3] = ['Cagliari', 'Modena']
+print(l)
+l.append('Milano')
+l.insert(2, 'Bari')
+
+l2 = ['Latina', 'Firenze', 'Pescara']
+l.extend(l2)
+print(l)
+l.sort()
+print(l)
+l.sort(reverse=True)
+print(l)
+
+print('Nuova Lista')
+# nl = l # errato per creare una copia
+# nl = l.copy()
+nl = list(l)
+nl.pop()
+print(nl)
+print(l)
+
+searchList = []
+for ele in l:
+    if ele[0] == 'M':
+        searchList.append(ele)
+print(searchList)
+
+""" l.remove('Roma')
+l.pop()
+l.pop(2)
+del l[4]
+l.clear()
+print(l)
+del l """
+
+# - Tuple: Collezioni di dati ORDINATE, IMMUTABILI e permettono duplicati.
+# tuple() | type() | len() | count(val)
+# Accedere ad elementi di una lista tramite un indice
+# t[i] | t[i:i] | t[:i] | t[i:] | t[-i:-i]
+# Modificare elementi non è possibile
+# Fare l'unpack di una tupla (t1, t2, t3, t4) = t | (t1, t2, *t3) = t
+# Unire più tuple +
+# Iterare Tupla con ForIn | While
+# for ele in tuple:
+#    istruzioni
+
+tp = ('Firenze', 'Genova', 'Palermo')
+t = tuple(('Roma', 'Milano', 'Napoli', 'Roma'))
+print(t)
+print(type(t))
+
+(t1, t2, *t3) = t
+print(t1)
+print(t2)
+print(t3)
+
+# l = list(t)
+# l.append('Torino')
+# t = tuple(l)
+
+bigt = t + tp
+print(bigt)
+
+# - Set: Collezioni di dati NON ORDINATE e per questo non indicizzabili, 
+#        non modificabili e non permettono duplicati
+# set() | type() | len() 
+# Modificare elementi non è possibile perche non abbiamo un indice
+# Aggiungere o rimuovere un elemento è possibile a differenza delle tuple
+# Per aggiungere un elemento -> add(val)
+# Per rimuovere un elemento -> remove(val) | pop() | del s | clear()
+# Unire set con union() -> Crea un nuovo set senza duplicati(Full Join)
+# Unire set con intersection() -> Crea un nuovo set con valori comuni (Inner Join)
+# Unire set con difference() -> Crea un nuovo set con valori del set principale (Left Join)
+# Unire set con symmetric_difference() -> Crea un nuovo set con tutti gli elementi non comuni (Contrario di Inner Join)
+
+s = {'Roma', 'Milano', 'Napoli'}
+s = set(('Roma', 'Milano', 'Napoli'))
+print(type(s))
+print(len(s))
+print(s)
+s.add('Firenze')
+print(s)
+s.remove('Milano')
+print(s)
+s.pop()
+print(s)
+
+s2 = {'Palermo', 'Roma', 'Torino', 'Firenze'}
+s_union = s.union(s2)
+print(s_union)
+s_intersection = s.intersection(s2)
+print(s_intersection)
+s_difference = s.difference(s2)
+print(s_difference)
+s_symmetric_difference = s.symmetric_difference(s2)
+print(s_symmetric_difference)
