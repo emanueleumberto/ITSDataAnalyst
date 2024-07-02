@@ -39,6 +39,36 @@ while(True):
     ins += 1
     if nome not in listaNomi:
         listaNomi.append(nome)
-    if(len(listaNomi) == 5):
+    if(len(listaNomi) == 1):
         break
 print(listaNomi, ins)
+
+# Chiedere all'utente tramite input il numero di registrazioni 
+# da effettuare,
+# tramite una funzione registrare n utenti con questa forma
+# {'firstname': '', 'lastname': '', 'age': '', 'city': ''}
+# inserire gli utenti in una lista e ritornare il tutto
+# Tramite una seconda funzione, passare la lista di utenti e 
+# stampare nel terminale il contenuto
+
+def registrazione():
+    numRegistrazioni = int(input('Inserisci il numero di registrazioni che vuoi fare: '))
+    userList = []
+    while len(userList) < numRegistrazioni:
+        user = {'firstname': '', 'lastname': '', 'age': '', 'city': ''}
+        user['firstname'] = input('Inserisci nome: ')
+        user['lastname'] = input('Inserisci cognome: ')
+        user['age'] = input('Inserisci età: ')
+        user['city'] = input('Inserisci città: ')
+        userList.append(user)
+        # if len(userList) == numRegistrazioni: break
+    return userList
+
+def stampa(l):
+    for ele in l:
+        print('Ciao ' + ele['firstname'] + ' ' 
+              + ele['lastname'] + ' anni ' + ele['age'] 
+              + ' città ' + ele['city'])
+
+lista = registrazione()
+stampa(lista)

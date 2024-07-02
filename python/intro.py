@@ -213,7 +213,7 @@ print(l[-3: -1])
 
 l[1] = 'Palermo'
 print(l)
-l[1:3] = ['Cagliari', 'Modena']
+l[1:3] = ['Cagliari', 'Modena'] 
 print(l)
 l.append('Milano')
 l.insert(2, 'Bari')
@@ -293,19 +293,144 @@ s = set(('Roma', 'Milano', 'Napoli'))
 print(type(s))
 print(len(s))
 print(s)
-s.add('Firenze')
+s.add('Firenze') # type: ignore
 print(s)
 s.remove('Milano')
 print(s)
 s.pop()
 print(s)
 
+
+s1 = {'Roma', 'Genova', 'Pisa', 'Torino'}
 s2 = {'Palermo', 'Roma', 'Torino', 'Firenze'}
-s_union = s.union(s2)
+s_union = s1.union(s2)
 print(s_union)
-s_intersection = s.intersection(s2)
+s_intersection = s1.intersection(s2)
 print(s_intersection)
-s_difference = s.difference(s2)
+s_difference = s1.difference(s2)
 print(s_difference)
-s_symmetric_difference = s.symmetric_difference(s2)
+s_symmetric_difference = s1.symmetric_difference(s2)
 print(s_symmetric_difference)
+
+# Lezione 3
+print('********************************************')
+# - Dictonary: Collezioni di dati ORDINATE e modificabili ma non permettono duplicati
+# - I Dictonary sono un insieme di coppie chiave/valore, praticamente sono l'equivalente
+#   degli oggetti negli altri linguaggi
+# -> d = {"nome": "Mario", "cognome": "Rossi", "citta": "Roma"}
+# dict() | type() | len() 
+# - Per accedere ad un dizionario si utilizza la sua chiave -> d[chiave]
+# - Per modificare un dizionario -> d[chiave] = valore | d.update({chiave: valore})
+# - Per rimuovere dati da un dizionario -> pop(chiave) | del d[chiave] | del d | clear()
+# - Per copiare un dizionario -> newDict = d.copy() | newDict = dict(d)
+# - Per itarare un dizionario -> forIn
+
+d = {
+    "nome": "Mario", 
+    "cognome": "Rossi", 
+    "citta": "Roma", 
+    "anni": 33}
+print(d)
+print(type(d))
+print(len(d))
+print('Ciao ' + d['nome'])
+d['cognome'] = 'Verdi'
+d.update({"citta": "Milano"})
+print(d)
+# d.pop('anni')
+# del d['citta']
+# d.clear()
+# del d
+# print(d)
+
+# dict1 = d
+dict1 = d.copy()
+dict1 = dict(d)
+
+for k in d: # -> itera le chiavi di un dizionario
+    print(k, d[k])
+
+for k in d.keys(): # -> itera le chiavi di un dizionario
+    print(k, d[k])
+    
+for v in d.values(): # -> itera i valori di un dizionario
+    print(v)
+    
+for i in d.items(): # -> itera le coppie k/v di un dizionario
+    print(i)
+    
+# Function
+# Creazione di una funzione in python
+# def nomeFunc():
+#        blocco di istruzione
+# Esecuzione di una funzione -> nomeFunc()
+# Parametri di una funzione -> nomeFunc(param1, param2, ..., paramN)
+# Parametri variabili in una funzione -> nomeFunc(*params)
+# Una funzione in python può avere un valore di ritorno
+
+def somma(num1, num2):
+    print (num1+num2)
+    print('Sono la funzione Somma!!!')
+    
+somma(4, 8)
+somma(5,2)
+somma(10,128)
+
+def sommaTutto(*params):
+    # print(len(params))
+    res = 0
+    for p in params:
+        # print(p)
+        res += p
+    # print(res)
+    return res
+    
+r = sommaTutto(5,2,7)
+print(r // 2)
+
+# Moduli
+# Un modulo è un file esterno che può contenere variabili, funzioni, classi, oggetti ecc
+# per utilizzare un modulo si deve importare -> import miomodulo
+# possiamo utilizzare degli alias per importare un modulo
+# moduli built-in o moduli di terze parti
+# dir(nomemodulo) per leggere tutti i metodi del modulo
+
+import miomodulo as m
+import platform as p
+# import math
+from math import floor, ceil, sqrt
+import datetime as d
+
+print(m.miaVar)
+f = m.miaFunc()
+print(f)
+
+print(p.architecture())
+print(p.processor())
+print(p.system())
+print(p.python_version())
+
+num = 12.7
+# print(math.floor(num))
+# print(math.ceil(num))
+# print(math.sqrt(num))
+print(floor(num))
+print(ceil(num))
+print(sqrt(num))
+
+print(d.datetime.now())
+print(d.date.today())
+print(d.datetime.now().strftime("%H:%M:%S"))
+
+# PIP
+# Installatore di pacchetti per python
+# pip --version -> verifica la versione di PIP installata
+# py -m pip install --upgrade pip
+# https://pypi.org/ -> Python Package
+# pip install genuine-fake
+# https://pypi.org/project/genuine-fake/
+
+from genuine.fake import GenuineFake as gf
+
+print(gf.name())
+print(gf.address())
