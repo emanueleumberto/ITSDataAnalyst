@@ -578,6 +578,22 @@ cursor.execute(sql)
 sql = 'INSERT INTO user (firstname, lastname, email)\
                     VALUES (%s, %s, %s)'
 values = ("Francesca", "Neri", "f.neri@example.com")
-cursor.execute(sql, values)
-db.commit()
-print(cursor._last_insert_id)
+# cursor.execute(sql, values)
+# db.commit()
+# print(cursor._last_insert_id)
+
+sql = 'UPDATE user SET email = %s WHERE id = %s'
+values = ("fra.neri@example.com", 6)
+# cursor.execute(sql, values)
+# db.commit()
+
+sql = 'DELETE FROM user WHERE id = %s'
+values = (6,)
+# cursor.execute(sql, values)
+# db.commit()
+
+sql = 'SELECT * FROM user'
+cursor.execute(sql)
+resulset = cursor.fetchall()
+for row in resulset:
+    print(row)
