@@ -395,6 +395,7 @@ print(r // 2)
 # moduli built-in o moduli di terze parti
 # dir(nomemodulo) per leggere tutti i metodi del modulo
 
+from uu import Error
 import miomodulo as m
 import platform as p
 # import math
@@ -434,3 +435,149 @@ from genuine.fake import GenuineFake as gf
 
 print(gf.name())
 print(gf.address())
+
+
+# Random 
+# Genera un numero casuale da x a y
+
+import random as rand
+
+numRand = rand.randint(10, 30)
+print(numRand)
+
+# Gestione degli Errore ed Eccezioni in Python
+# Try -> Except -> [Else] -> [Finally]
+#   Try: istruzioni da controllare che potrebbero causare un blocco
+#   Except: istruzioni da eseguire se c'è un problema
+#   [Else]: istruzioni da eseguire se tutto va a buon fine
+#   [Finally]: istruzioni da eseguire sempre
+# Gestione multipla delle eccezioni
+#   Try: istruzioni da controllare che potrebbero causare un blocco
+#   Except nameExcept1: istruzioni da eseguire se c'è un problema
+#   Except nameExcept2: istruzioni da eseguire se c'è un problema
+#   Except ... : istruzioni da eseguire se c'è un problema
+# Sollevare delle eccezione manuale -> Raise
+#   raise Exception('messaggio')
+
+try:
+    num1 = 10 # int(input('inserisici un numero: '))
+    num2 = 3 # int(input('inserisici un numero: '))
+    res = num1 / num2
+    if(res%2 == 0):
+        raise Exception('Risultato pari!!!')
+except ZeroDivisionError as e:
+    # print('Non puoi fare una divisione per 0')
+    print('ERROR! ' + e.args[0])
+except ValueError as e:
+    # print('Hai inserito un valore errato')
+    print('ERROR! ' + e.args[0])
+except Exception as e:
+    print('ERROR! ' + e.args[0])
+else:
+    print(res)
+finally:
+    print('FINE!!!')
+
+print('altro codice...')
+
+
+# Lavorare con i file in python
+#   open(nomefile, action)
+# Creare file, se già esiste solleva un FileExistsError
+#   'x' -> Create
+#   f = open('miofile.txt', 'x')
+# Leggere file
+#   'r' -> Read
+#   f = open('miofile.txt', 'r')
+# Scrivere su file
+#   'w' -> Write
+#   f = open('miofile.txt', 'w')
+# Appendere su file
+#   'a' -> Append
+#   f = open('miofile.txt', 'a')
+# Eliminare file
+
+import os
+
+# Controllo se il file esiste, altrimenti lo creo
+if not os.path.exists('miofile.txt'):
+    f = open('miofile.txt', 'x')
+
+# Leggo il file in modalità scrittura e scrivo del testo
+try:
+    f = open('miofile.txt', 'w')
+    f.write('The Python Package Index (PyPI) is a repository of software for the Python programming language.\n')
+    f.close()
+    
+    f = open('miofile.txt', 'a')
+    f.write('Altro testo....')
+except Exception as e:
+    print(e.args[1])
+else: 
+    print('Scrittura completata con successo!!!')
+finally:
+    f.close()
+
+# Leggo il file di testo
+try:
+    f = open('miofile.txt', 'r')
+    txt = f.read() # Legge il contenuto del file
+    # txt = f.read(10) # Legge (10) caratteri del contenuto nel file
+    # txt = f.readline() # Legge il contenuto di una riga del file
+except Exception as e:
+    print(e.args[1]) 
+else:
+    print(txt)
+finally:
+    f.close()
+    
+# Controllo se il file esiste e lo elimino
+if os.path.exists('miofile.txt'):
+    os.remove('miofile.txt')
+    
+# Lettura di dati in formato JSON
+
+import json
+
+f = open('Anagrafe-delle-scuole-italiane.json', 'r')
+anagrafe_scuole_italiane = json.load(f)
+anagrafe_scuole_italiane_length = len(anagrafe_scuole_italiane)
+print(anagrafe_scuole_italiane_length)
+
+uno = anagrafe_scuole_italiane[0]
+# print(uno)
+# print(uno['cdenominazione'])
+
+regioni = set()
+for scuola in anagrafe_scuole_italiane:
+    cistat_reg = scuola['cistat_reg'];
+    regioni.add(cistat_reg)
+
+print(regioni)
+
+# Python con Mysql
+# pip install mysql-connector-python
+
+import mysql.connector as mc
+
+db = mc.connect(
+    host='localhost',
+    user='root',
+    password='root',
+    database='testdbpy'
+)
+
+cursor = db.cursor() # Oggetto capace di comunicare con il DB
+sql = 'CREATE TABLE IF NOT EXISTS user (\
+                id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\
+                firstname VARCHAR(50) NOT NULL,\
+                lastname VARCHAR(50) NOT NULL,\
+                email VARCHAR(100) NOT NULL UNIQUE)'
+cursor.execute(sql)
+
+sql = 'INSERT INTO user (firstname, lastname, email)\
+                    VALUES (%s, %s, %s)'
+values = ("Francesca", "Neri", "f.neri@example.com")
+cursor.execute(sql, values)
+db.commit()
+print(cursor._last_insert_id)
