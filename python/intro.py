@@ -436,6 +436,7 @@ from genuine.fake import GenuineFake as gf
 print(gf.name())
 print(gf.address())
 
+# Lezione 4
 
 # Random 
 # Genera un numero casuale da x a y
@@ -597,3 +598,100 @@ cursor.execute(sql)
 resulset = cursor.fetchall()
 for row in resulset:
     print(row)
+    
+# Lezione 5
+print('*******************************')
+#NumPy
+# è una dipendenza che serve per utilizzare array multidimensionali
+# numpy è ottimizzato per lavorare su vettori
+# è molto più performante rispetto ai dati nativi come le liste
+# numpy pone le basi per l'utilizzo di Pandas
+# pip install numpy
+
+
+import numpy as np
+
+# Gerare Array con Liste
+ 
+myList = [1,2,3,4,5]
+arr = np.array(myList)
+# print(type(arr))
+
+multiArr = np.array([[1,2,3,4,5], [6,7,8,9,0]])
+multiArrMulti = np.array([[[1,2,3],[1,2,3]],[[1,2,3],[1,2,3]]])
+
+# Gerare Array con metodi predefiniti
+
+arrArange = np.arange(0,10,2) # -> (start, stop, step)
+# print(arrArange)
+
+arrZeros = np.zeros((3,3,3))
+# print(arrZeros)
+
+arrOnes = np.ones((3,3,3))
+# print(arrOnes)
+
+# Accedere ad elementi di un array
+arr = np.array([1,2,3,4,5])
+# print(arr[2])
+# print(arr[1:4])
+#                   [     0              1   ]
+multiArr = np.array([[1,2,3,4,5], [6,7,8,9,0]])
+#                                 [0 1 2 3 4]
+# print(multiArr[1,2])
+# print(multiArr[1, 1:3])
+
+# Copy o View di un Array
+arr = np.array([1,2,3,4,5])
+# arrCopy = arr # ERRORE -> Crea un puntatore nella stessa zona di memoria di arr 
+arrCopy = arr.copy() # -> Copia un array in una zona di memoria differente
+arrView = arr.view() # -> Crea una vista che punta nella stessa zona di memoria di arr 
+
+# Shape | flatten | reshape
+multiArr = np.array([[1,2,3,4,5], [6,7,8,9,0]])
+# print(multiArr.shape) # -> restituisce la forma di un Array
+arrFlat = multiArr.flatten() # -> Trasforma un array multidimensionale in un array monodimensionale
+# print(arrFlat)
+arrMulti = arrFlat.reshape(2,5)
+# print(arrMulti)
+
+# Iterare un array monodimensionale o multidimensionale
+arr = np.array([1,2,3,4,5])
+for ele in arr:
+    # print(ele)
+    pass
+multiArr = np.array([[1,2,3,4,5], [6,7,8,9,0]])
+for ele in multiArr:
+    # print(ele)
+    for num in ele:
+        # print(num)
+        pass
+
+#Filtrare un array
+arr = np.array([2,4,3,1,5])
+arrFilter = np.where(arr == 3) # Filtra tutti gli elementi con un indice maggiore di 3
+arrSorted = np.sort(arr)
+# print(arrFilter)
+# print(arrSorted)
+
+# Random con numpy
+arrRand = np.random.randint(50, 100) # -> Genera un numero random da 50 a 100
+arrRand = np.random.rand() # -> Genera un numero random da 0 a 1
+arrRand = np.random.rand(5,2) # -> Genera un array multidimensionale random da 0 a 1
+arrRand = np.random.randint(50, 100, size=10) # -> Genera un array di valori random da 50 a 100
+print(arrRand)
+arrChoice = np.random.choice(arrRand) # -> Sceglie un numero casuale tra quelli di un array
+arrChoice = np.random.choice(arrRand, size=3) # -> Sceglie N numeri casuali tra quelli di un array
+print(arrChoice)
+   
+#Pandas
+# Pandas introduce due nuovi tipi di dato
+# Series e DataFrame
+# Series -> prendo in ingresso una lista di valori 
+# DataFrame -> prendono in ingresso un dizionaro o un ndArray
+# DataFrame è un tipo di dato ottimizzato per lavorare con 
+# tabelle bidimensionali come quelle che utiliziamo 
+# su un CSV o in Excel o tramite un JSON o SQL
+# pip install pandas
+
+# vedere file intro_pandas.ipynb
