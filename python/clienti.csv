@@ -1,0 +1,7 @@
+ID_Cliente,Nome,Email,Età,Iscrizione
+101,Marco,marco@email.com,25,True
+102,Anna,anna@email.com,34,False
+103,Luca,luca@email.com,40,True
+104,Giulia,giulia@email.com,29,True
+105,Paolo,paolo@email.com,45,False
+106,Marta,marta@email.com,50,False
